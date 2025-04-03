@@ -1,0 +1,30 @@
+[
+  {
+    "id": 2,
+    "name": "Wireless Headphones",
+    "image": "/images/headphones.jpg",
+    "price": "$99",
+    "category": "headphones"
+  },
+  {
+    "id": 3,
+    "name": "Gaming Mouse",
+    "image": "/images/mouse.jpg",
+    "price": "$49",
+    "category": "mouse"
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Keyboard",
+    "image": "/images/keyboard.jpg",
+    "price": "$129",
+    "category": "keyboard"
+  },
+  {
+    "id": 5,
+    "name": "SmartPhone",
+    "price": "1000",
+    "category": "phone",
+    "image": "/images/phone.jpg"
+  }
+]
