@@ -6,27 +6,41 @@ export default NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "admin" },
-        password: { label: "Password", type: "123456" },
+        username: { label: "Username", type: "text" },
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // Simple Hardcoded Authentication (Replace with DB check)
-        if (credentials.username === "admin" && credentials.password === "123456") {
-          return { id: 1, name: "Admin", email: "admin@example.com" };
-        }
-        // Return null if authentication fails
-        throw new Error("Invalid username or password");
+        // Call your backend for authentication
+        const res = await fetch("http://localhost:5000/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: credentials.username,
+            password: credentials.password,
+          }),
+        });
+
+        const user = await res.json();
+
+        if (res.ok && user) return user;
+        return null;
       },
     }),
   ],
-  callbacks: {
-    async session({ session, token }) {
-      session.user.id = token.id;
-      return session;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/login", // Custom login page
+  },
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.user = user;
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
   },
 });
