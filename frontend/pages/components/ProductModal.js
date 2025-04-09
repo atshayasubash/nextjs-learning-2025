@@ -25,10 +25,10 @@ export default function ProductModal({ onClose }) {
             <div className={styles.modal}>
                 <h2>Add Product</h2>
                 <form onSubmit={handleSubmit}>
-                    <input placeholder="Name" onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
-                    <input placeholder="Image URL" onChange={(e) => setFormData({ ...formData, image: e.target.value })} required />
-                    <input placeholder="Price" onChange={(e) => setFormData({ ...formData, price: e.target.value })} required />
-                    <input placeholder="Category" onChange={(e) => setFormData({ ...formData, category: e.target.value })} required />
+                    <input data-testid="input-name" placeholder="Name" onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
+                    <input data-testid="input-image" placeholder="Image URL" onChange={(e) => setFormData({ ...formData, image: e.target.value })} required />
+                    <input data-testid="input-price" placeholder="Price" onChange={(e) => setFormData({ ...formData, price: e.target.value })} required />
+                    <input data-testid="input-category" placeholder="Category" onChange={(e) => setFormData({ ...formData, category: e.target.value })} required />
                     <div className={styles.btns}>
                         <button type="submit">Add</button>
                         <button type="button" onClick={onClose}>Cancel</button>

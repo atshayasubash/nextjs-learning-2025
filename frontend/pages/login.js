@@ -29,14 +29,16 @@ export default function Login() {
         <h2>Login to Product Showcase</h2>
         <form onSubmit={handleLogin}>
           <input
+            id="username"
             type="text"
-            placeholder="Email"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
             className={styles.input}
           />
           <input
+            id="password"
             type="password"
             placeholder="Password"
             value={password}

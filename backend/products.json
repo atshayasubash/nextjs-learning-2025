@@ -1,10 +1,10 @@
 [
   {
     "id": 2,
-    "name": "Wireless Headphones",
-    "image": "/images/headphones.jpg",
-    "price": "$99",
-    "category": "headphones"
+    "name": "Updated Cypress Product",
+    "image": "https://via.placeholder.com/300",
+    "price": "299.99",
+    "category": "Updated Category"
   },
   {
     "id": 5,
@@ -26,5 +26,26 @@
     "name": "USB",
     "price": "$50",
     "image": "/images/usb.jpg"
+  },
+  {
+    "id": 8,
+    "category": "test",
+    "name": "test",
+    "price": "$10",
+    "image": "/images/test"
+  },
+  {
+    "id": 9,
+    "category": "test",
+    "name": "test",
+    "price": "test",
+    "image": "/images/test"
+  },
+  {
+    "id": 10,
+    "category": "Cypress",
+    "name": "Cypress Product",
+    "price": "199.99",
+    "image": "/images/https://via.placeholder.com/150"
   }
 ]

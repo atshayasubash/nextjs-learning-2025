@@ -21,12 +21,12 @@ export default function EditModal({ product, onClose }) {
             <div className={styles.modal}>
                 <h2>Edit Product</h2>
                 <form onSubmit={handleSubmit}>
-                    <input value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-                    <input value={formData.image} onChange={(e) => setFormData({ ...formData, image: e.target.value })} />
-                    <input value={formData.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} />
-                    <input value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })} />
+                    <input data-testid="edit-name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                    <input data-testid="edit-image" value={formData.image} onChange={(e) => setFormData({ ...formData, image: e.target.value })} />
+                    <input data-testid="edit-price" value={formData.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} />
+                    <input data-testid="edit-category" value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })} />
                     <div className={styles.btns}>
-                        <button type="submit">Save</button>
+                        <button data-testid="save-button" type="submit">Save</button>
                         <button type="button" onClick={onClose}>Cancel</button>
                     </div>
                 </form>

@@ -65,7 +65,7 @@ export default function ProductList() {
                         <p>{product.category}</p>
                         <strong>{product.price}</strong>
                         <div className={styles.actions}>
-                            <button onClick={() => setEditProduct(product)}><img src="/icons/edit.svg" className={styles.icon} />Edit</button>
+                            <button data-testid="edit-button" onClick={() => setEditProduct(product)}><img src="/icons/edit.svg" className={styles.icon} />Edit</button>
                             <button onClick={() => handleDelete(product.id)}><img src="/icons/delete.svg" className={styles.icon} />Delete</button>
                             <Link href={`/products/${product.id}`}>
                                 <button className={styles.viewBtn}><img src="/icons/view.svg" className={styles.icon} />View</button>
